@@ -1,0 +1,50 @@
+<p>festivals-list works!</p>
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Tablemax 1</th>
+            <th>Tableprice 1</th>
+            <th>Sqmprice 1</th>
+            <th>Tablebooked 1</th>
+            <th>Sqmbooked 1</th>
+            <th>Tablemax 2</th>
+            <th>Sqmprice 2</th>
+            <th>Tablemax 3</th>
+            <th>Tableprice 3</th>
+            <th>Sqmprice 3</th>
+            <th>Revenue</th>
+            <th>Visitor</th>
+            <th>Table Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let festival of festivalsList; let i=index">
+            <td>{{ festival.id }}</td>
+            <td>{{ festival.name }}</td>
+            <td>{{ festival.tablemax_1 }}</td>
+            <td>{{ festival.tableprice_1 }}</td>
+            <td>{{ festival.sqmprice_1 }}</td>
+            <td>{{ festival.tablebooked_1 }}</td>
+            <td>{{ festival.sqmbooked_1 }}</td>
+            <td>{{ festival.tablemax_2 }}</td>
+            <td>{{ festival.sqmprice_2 }}</td>
+            <td>{{ festival.tablemax_3 }}</td>
+            <td>{{ festival.tableprice_3 }}</td>
+            <td>{{ festival.sqmprice_3 }}</td>
+            <td>{{ festival.revenue }}</td>
+            <td>{{ festival.visitor }}</td>
+            <td>{{ festival.tableTotal }}</td>
+            <button (click)="emitId(i)">select</button>
+            <button (click)="delete(i)">delete</button>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Create a festival de choucroute</h2>
+      <button (click)="create()">create</button>
+
+      
+</div>

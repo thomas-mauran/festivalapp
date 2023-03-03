@@ -1,0 +1,33 @@
+<h2>Update!</h2>
+<form
+  *ngIf="festivalGroup && selectedFestival"
+  [formGroup]="festivalGroup"
+  (ngSubmit)="function()"
+>
+  <p>Name:</p>
+  <input type="text" formControlName="name"  />
+
+  <p>table_max_1:</p>
+  <input type="text" formControlName="tablemax_1" />
+
+  <p>tablemax_2:</p>
+  <input type="text" formControlName="tablemax_2" />
+
+  <p>tablemax_3:</p>
+  <input type="text" formControlName="tablemax_3" />
+
+
+
+  <p>sqmprice_1:</p>
+  <input type="text" formControlName="sqmprice_1" />
+
+  <p>sqmprice_2:</p>
+  <input type="text" formControlName="sqmprice_2" />
+
+  <p>sqmprice_2:</p>
+  <input type="text" formControlName="sqmprice_2" />
+
+  <p>Room:</p>
+  <input type="text" formControlName="roomPrice" />
+  <button [disabled]="!festivalGroup.valid" type="submit">d</button>
+</form>
