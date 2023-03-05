@@ -52,6 +52,7 @@ export class AppComponent {
 
   openDetails(id: number): void {
     this.selectedId = id
+    this.createOpen =false;
     this.isOpen = true
     if (this.festivals) {
       this.selectedFestival = this.festivals[id]
@@ -59,6 +60,8 @@ export class AppComponent {
   }
 
   openDetailsEditor(id: number): void {
+    this.createOpenEditor = false;
+
     this.selectedIdEditor = id
     this.isOpenEditor = true
     if (this.editors) {
@@ -67,6 +70,8 @@ export class AppComponent {
   }
 
   openDetailsGame(id: number): void {
+    this.createOpenGame = false;
+
     this.selectedIdGame = id
     this.isOpenGame = true
     if (this.games) {
@@ -76,6 +81,7 @@ export class AppComponent {
 
   create(): void {
     console.log('create')
+
     this.createOpen = true  
   }
 
