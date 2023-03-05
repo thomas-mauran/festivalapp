@@ -16,12 +16,14 @@ export class Festival {
   public sqmprice_3: number;
   public revenue: number = 0;
   public visitor: boolean = false;
+  public editor!: string;
+
   public get tableTotal(): number {
     return this.tablemax_1 + this.tablemax_2 + this.tablemax_3;
   }
 
   public constructor(
-    id: string,
+    id: any,
     @Optional() name: string,
     @Optional() tablemax_1: number,
     @Optional() tableprice_1: number,
@@ -31,6 +33,7 @@ export class Festival {
     @Optional() tablemax_3: number,
     @Optional() sqmprice_3: number,
     @Optional() tableprice_3: number,
+    @Optional() editor: string,
   ) {
     this.id = id;
     this.name = name;
@@ -42,5 +45,7 @@ export class Festival {
     this.tablemax_3 = tablemax_3;
     this.tableprice_3 = tableprice_3;
     this.sqmprice_3 = (sqmprice_3 == null) ? this.tableprice_1/6 : sqmprice_3;
+    this.editor = editor;
+
   }
 }

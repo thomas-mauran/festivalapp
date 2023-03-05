@@ -1,0 +1,70 @@
+<h2>update a game !</h2>
+<form
+  *ngIf="gameGroup && selectedGame && createOpenGame == false"
+  [formGroup]="gameGroup"
+  (ngSubmit)="function()"
+>
+  <p>name:</p>
+  <input type="text" formControlName="name" />
+
+  <p>type:</p>
+  <select name="gameType">
+    <option value="child">Child</option>
+    <option value="family">Family</option>
+    <option value="game role">Game Role</option>
+    <option value="novice">Novice</option>
+    <option value="expert">Expert</option>
+  </select>
+  
+  <p>ageMin:</p>
+  <input type="number" formControlName="ageMin" />
+
+  <p>ageMax:</p>
+  <input type="number" formControlName="ageMax" />
+
+  <p>playerMin:</p>
+  <input type="number" formControlName="playerMin" />
+
+  <p>playerMax:</p>
+  <input type="number" formControlName="playerMax" />
+  <p>duree:</p>
+  <input type="number" formControlName="duree" />
+
+  <button [disabled]="!gameGroup.valid" type="submit">update</button>
+</form>
+
+<form
+  *ngIf="createOpenGame"
+  [formGroup]="gameGroup"
+  (ngSubmit)="functionCreate()"
+>
+<p>name:</p>
+<input type="text" formControlName="name" />
+
+<p>type:</p>
+<select name="gameType">
+  <option value="child">Child</option>
+  <option value="family">Family</option>
+  <option value="game role">Game Role</option>
+  <option value="novice">Novice</option>
+  <option value="expert">Expert</option>
+</select>
+
+
+<p>ageMin:</p>
+<input type="number" formControlName="ageMin" />
+
+<p>ageMax:</p>
+<input type="number" formControlName="ageMax" />
+
+<p>playerMin:</p>
+<input type="number" formControlName="playerMin" />
+
+<p>playerMax:</p>
+<input type="number" formControlName="playerMax" />
+<p>duree:</p>
+<input type="number" formControlName="duree" min="5"/>
+
+
+  <button [disabled]="!gameGroup.valid" type="submit">create</button>
+</form>

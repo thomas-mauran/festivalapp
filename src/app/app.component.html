@@ -2,6 +2,13 @@
   <h1>Festival de la choucroute</h1>
   <h2>Festival courant {{selectedId}}</h2>
   <app-festivals-list *ngIf="festivals" [festivalsList]="festivals" (selectedId)="openDetails($event)" (createEmit)="create()"/>
-  <app-festival-details *ngIf="selectedFestival" [selectedFestival]="selectedFestival" [create]="createOpen"/>
+  <app-festival-details *ngIf="selectedFestival || createOpen" [selectedFestival]="selectedFestival" [createOpen]="createOpen"/>
+  
+  <app-festival-editor-list   *ngIf="editors" [editorList]="editors" (selectedEditorId)="openDetailsEditor($event)" (createEditorEmit)="createEditor()"/>
+  <app-editor-details *ngIf="selectedEditor || createOpenEditor" [selectedEditor]="selectedEditor" [createOpenEditor]="createOpenEditor"/>
+
+  <app-festival-game-list   *ngIf="games" [gameList]="games" (selectedgameId)="openDetailsGame($event)" (createGameEmit)="createGame()"/>
+  <app-game-details *ngIf="selectedGame || createOpenGame" [selectedGame]="selectedGame" [createOpenGame]="createOpenGame"/>
+
   <app-message />
 </div>

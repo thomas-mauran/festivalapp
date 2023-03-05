@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Festival } from 'src/app/models/festival';
+import { Editor } from 'src/app/models/editor';
 import { FestivalsService } from 'src/app/services/festivals.service';
+import { EditorService } from 'src/app/services/editor.service';
 
 @Component({
   selector: 'app-festivals-list',
@@ -8,6 +10,8 @@ import { FestivalsService } from 'src/app/services/festivals.service';
 })
 export class FestivalsListComponent implements OnInit {
   @Input() festivalsList: Festival[] | null = null;
+  @Input() editorList: Editor[] | null = null;
+
   @Output() selectedId = new EventEmitter<number>();
   @Output() createEmit = new EventEmitter();
 
@@ -27,12 +31,17 @@ export class FestivalsListComponent implements OnInit {
     }
   }
 
-  constructor(public festivalService: FestivalsService) {}
+  constructor(public festivalService: FestivalsService,public editorService: EditorService) {}
 
   ngOnInit(): void {
     if (this.festivalsList === null) {
-      this.festivalService.getAllFestivals().subscribe((fljkhdslfkt) => {
-        this.festivalsList = fljkhdslfkt;
+      this.festivalService.getAllFestivals().subscribe((f) => {
+        this.festivalsList = f;
+      });
+    }
+    if (this.editorList === null) {
+      this.editorService.getAlleditors().subscribe((e) => {
+        this.editorList = e;
       });
     }
   }

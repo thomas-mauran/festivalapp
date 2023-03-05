@@ -1,0 +1,38 @@
+<h2>game list </h2>
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>type </th>
+            <th>ageMin </th>
+            <th>ageMax </th>
+            <th>playerMin </th>
+            <th>playerMax </th>
+            <th>duree </th>
+
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let game of gameList; let i=index">
+            <td>{{ game.id }}</td>
+            <td>{{ game.name }}</td>
+            <td>{{ game.type }}</td>
+            <td>{{ game.ageMin }}</td>
+            <td>{{ game.ageMax }}</td>
+            <td>{{ game.playerMin }}</td>
+            <td>{{ game.playerMax }}</td>
+            <td>{{ game.duree }}</td>
+           
+            <button (click)="emitId(i)">select</button>
+            <button (click)="delete(i)">delete</button>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Create an game</h2>
+      <button (click)="create()">create</button>
+
+      
+</div>

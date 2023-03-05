@@ -1,0 +1,36 @@
+
+<form
+  *ngIf="editorGroup && selectedEditor && createOpenEditor == false"
+  [formGroup]="editorGroup"
+  (ngSubmit)="function()"
+>
+<p>name:</p>
+  <input type="text" formControlName="name"  />
+
+  <p>contact:</p>
+  <input type="text" formControlName="contact" />
+
+  <select formControlName="game">
+    <option *ngFor="let game of gameList" [value]="game.name">{{game.name}}</option>
+  </select>
+
+  <button [disabled]="!editorGroup.valid" type="submit">update</button>
+</form>
+
+<form
+  *ngIf="createOpenEditor"
+  [formGroup]="editorGroup"
+  (ngSubmit)="functionCreate()"
+>
+<p>name:</p>
+<input type="text" formControlName="name" />
+
+  <p>contact:</p>
+  <input type="text" formControlName="contact" />
+
+
+  <select formControlName="game">
+    <option *ngFor="let game of gameList" [value]="game.name">{{game.name}}</option>
+  </select>
+  <button [disabled]="!editorGroup.valid" type="submit">create</button>
+</form>

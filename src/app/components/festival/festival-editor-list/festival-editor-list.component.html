@@ -1,0 +1,31 @@
+<h2>editor list </h2>
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>contacts </th>
+            <th>game </th>
+
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let editor of editorList; let i=index">
+            <td>{{ editor.id }}</td>
+            <td>{{ editor.name }}</td>
+            <td>{{ editor.contact }}</td>
+            <td>{{ editor.game }}</td>
+            
+           
+            <button (click)="emitId(i)">select</button>
+            <button (click)="delete(i)">delete</button>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Create an editor</h2>
+      <button (click)="create()">create</button>
+
+      
+</div>

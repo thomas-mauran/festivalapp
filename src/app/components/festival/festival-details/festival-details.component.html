@@ -1,10 +1,9 @@
 <h2>Update!</h2>
 <form
-  *ngIf="festivalGroup && selectedFestival"
+  *ngIf="festivalGroup && selectedFestival && createOpen == false"
   [formGroup]="festivalGroup"
   (ngSubmit)="function()"
 >
-  <p>Name:</p>
   <input type="text" formControlName="name"  />
 
   <p>table_max_1:</p>
@@ -29,5 +28,48 @@
 
   <p>Room:</p>
   <input type="text" formControlName="roomPrice" />
-  <button [disabled]="!festivalGroup.valid" type="submit">d</button>
+
+  <p>editor:</p>
+
+  <select formControlName="editor">
+    <option *ngFor="let editor of editorList" [value]="editor.name">{{editor.name}}</option>
+  </select>
+  <button [disabled]="!festivalGroup.valid" type="submit">update</button>
+</form>
+
+<form
+  *ngIf="createOpen"
+  [formGroup]="festivalGroup"
+  (ngSubmit)="functionCreate()"
+>
+  <input type="text" formControlName="name"  />
+
+  <p>table_max_1:</p>
+  <input type="text" formControlName="tablemax_1" />
+
+  <p>tablemax_2:</p>
+  <input type="text" formControlName="tablemax_2" />
+
+  <p>tablemax_3:</p>
+  <input type="text" formControlName="tablemax_3" />
+
+  <p>sqmprice_1:</p>
+  <input type="text" formControlName="sqmprice_1" />
+
+  <p>sqmprice_2:</p>
+  <input type="text" formControlName="sqmprice_2" />
+
+  <p>sqmprice_2:</p>
+  <input type="text" formControlName="sqmprice_2" />
+
+  <p>Room:</p>
+  <input type="text" formControlName="roomPrice" />
+
+
+  <p>editor:</p>
+
+  <select formControlName="editor">
+    <option *ngFor="let editor of editorList" [value]="editor.name">{{editor.name}}</option>
+  </select>
+  <button [disabled]="!festivalGroup.valid" type="submit">create</button>
 </form>

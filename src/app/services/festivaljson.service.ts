@@ -17,7 +17,8 @@ export class FestivaljsonService {
       json.tableprice_3,
       json.sqmprice_1,
       json.sqmprice_2,
-      json.sqmprice_3
+      json.sqmprice_3,
+      json.editor
     );
   }
   getFestivals(): Observable<Festival[]> {

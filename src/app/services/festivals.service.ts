@@ -32,7 +32,8 @@ export class FestivalsService {
       json.tableprice_3,
       json.sqmprice_1,
       json.sqmprice_2,
-      json.sqmprice_3
+      json.sqmprice_3,
+      json.editor
     );
   }
 
@@ -60,9 +61,11 @@ export class FestivalsService {
       .get()
       .subscribe((doc) => {
         if (!doc.exists) {
-          this.festivalCollection
+
+          const r = this.festivalCollection
             .doc(festival.id)
             .set(Object.assign({}, festival));
+            console.log(r)
         } // else doc exists!
       });
   }
